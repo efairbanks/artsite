@@ -1,0 +1,38 @@
+
+Page
+  title			: string
+  body			: text
+  is_root_page		: boolean
+  parent_page		: integer
+
+  galleries		: has_many
+  posts			: has_many
+  pages			: has_many
+  images		: has_many
+
+Gallery
+  title			: string
+  description		: text
+  preview_image		: integer
+  parent_page		: integer
+
+  images		: has_many
+  posts			: has_many
+
+Post
+  title			: string
+  body			: text
+  parent_page		: integer
+  parent_gallery	: integer
+
+  images		: has_many
+  
+
+Image
+  title			: string
+  description		: text
+  url			: string
+  parent_page		: integer
+  parent_gallery	: integer
+  parent_post		: integer
+  
