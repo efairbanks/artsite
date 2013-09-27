@@ -24,6 +24,10 @@
     <%= f.check_box :root_page %>
   </div>
   <div class="field">
+    <%= f.label :home_page %>
+    <%= f.check_box :home_page %>
+  </div>
+  <div class="field">
     <%= f.label 'Parent Page' %><br>
     <%= f.collection_select :page_id, Page.all, :id, :title, { include_blank: true} %>
   </div>

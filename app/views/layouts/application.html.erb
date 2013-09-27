@@ -38,32 +38,16 @@
   </head>
   <body>
 
-    <div class="container" style="margin-top:50px;">
-        <div class="row">
-          <div class="span9">
-            <%= bootstrap_flash %>
-            <%= yield %>
-          </div>
-          <div class="span3">
-            <div class="well sidebar-nav">
-              <h3>Sidebar</h3>
-              <ul class="nav nav-list">
-                <li class="nav-header">Sidebar</li>
+    <div class="container">
+      <%= yield %>
+      <%# bootstrap_flash %>
+    </div>
 
-                <% @root_pages.each do |page| %>
-                  <li><%= link_to page.title, page_url(page) %></li>
-                <% end %>
-
-              </ul>
-            </div><!--/.well -->
-          </div><!--/span-->
-        </div><!--/row-->
-
-      <footer>
-        <p>&copy; Company 2013</p>
-      </footer>
-
-    </div> <!-- /container -->
+    <!--
+    <%# @root_pages.each do |page| %>
+      <li><%# link_to page.title, page_url(page) %></li>
+    <%# end %>
+    -->
 
   </body>
 </html>

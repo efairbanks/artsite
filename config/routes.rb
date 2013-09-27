@@ -5,6 +5,8 @@ Artsite::Application.routes.draw do
  resources :galleries, path: '/admin/galleries'
  resources :pages, path: '/admin/pages'
 
+ root 'site#home'
+
  #resources :posts, path: '/admin/posts'
 
   # The priority is based upon order of creation: first created -> highest priority.
