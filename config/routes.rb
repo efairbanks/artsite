@@ -1,11 +1,11 @@
 Artsite::Application.routes.draw do
-  resources :images
 
-  resources :posts
+ resources :images, path: '/admin/images'
+ resources :posts, path: '/admin/posts'
+ resources :galleries, path: '/admin/galleries'
+ resources :pages, path: '/admin/pages'
 
-  resources :galleries
-
-  resources :pages
+ #resources :posts, path: '/admin/posts'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

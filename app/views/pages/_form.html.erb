@@ -20,12 +20,12 @@
     <%= f.text_area :body %>
   </div>
   <div class="field">
-    <%= f.label :root_page %><br>
+    <%= f.label :root_page %>
     <%= f.check_box :root_page %>
   </div>
   <div class="field">
-    <%= f.label :page_id %><br>
-    <%= f.number_field :page_id %>
+    <%= f.label 'Parent Page' %><br>
+    <%= f.collection_select :page_id, Page.all, :id, :title, { include_blank: true} %>
   </div>
   <div class="actions">
     <%= f.submit %>
