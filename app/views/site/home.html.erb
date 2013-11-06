@@ -1,24 +1,19 @@
-<script type="text/javascript">
-  $(function(){
-
-    window.changePage = function(pageID)
-    {
-      $.ajax({  dataType: 'json',
-                type: 'GET',
-                url: 'admin/pages/'+pageID,
-                success: function(page){
-
-                  $('#pageTitle').html(page.title);
-                  $('#pageBody').html(page.body);
-
-                }});
-    }
-
-  });
-</script>
-
 <div style="height: 50px;"></div>
 <div class="row">
+  <div class="span12">
+    <div class="hero-unit" id="rootPages">
+      <% @root_pages.each do |page| %>
+        <a href="<%= page.title %>"><%= page.title %></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <% end %>
+    </div>
+  </div>
+  <div class="span4 pull-right">
+    <div class="hero-unit">
+      Placeholder1
+      Placeholder2
+      Placeholder3
+    </div>
+  </div>
   <div class="span8">
     <div class="row">
       <div class="span8">
@@ -38,13 +33,6 @@
           <% end %>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="span4">
-    <div class="hero-unit" id="rootPages">
-      <% @root_pages.each do |page| %>
-        <a onclick="window.changePage(<%= page.id %>)"><%= page.title %></a><br>
-      <% end %>
     </div>
   </div>
 </div>

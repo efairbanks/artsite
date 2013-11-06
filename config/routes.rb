@@ -1,11 +1,13 @@
 Artsite::Application.routes.draw do
 
- resources :images, path: '/admin/images'
- resources :posts, path: '/admin/posts'
- resources :galleries, path: '/admin/galleries'
- resources :pages, path: '/admin/pages'
+  resources :images, path: '/admin/images'
+  resources :posts, path: '/admin/posts'
+  resources :galleries, path: '/admin/galleries'
+  resources :pages, path: '/admin/pages'
 
- root 'site#home'
+  root 'site#home'
+
+  get ':title' => 'site#home', :defaults => { :title => 'Home' }
 
  #resources :posts, path: '/admin/posts'
 
