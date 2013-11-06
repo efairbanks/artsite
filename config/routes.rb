@@ -7,6 +7,8 @@ Artsite::Application.routes.draw do
 
   root 'site#home'
 
+  get 'admin' => 'application#admin'
+
   get ':title' => 'site#home', :defaults => { :title => 'Home' }
 
  #resources :posts, path: '/admin/posts'
