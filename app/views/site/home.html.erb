@@ -9,9 +9,9 @@
   </div>
   <div class="span4 pull-right">
     <div class="hero-unit">
-      Placeholder1
-      Placeholder2
-      Placeholder3
+      <% @child_pages.each do |page| %>
+        <a href="<%= page.title %>"><%= page.title %></a><br/>
+      <% end %>
     </div>
   </div>
   <div class="span8">
