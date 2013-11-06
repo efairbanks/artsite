@@ -1,38 +1,44 @@
-<div style="height: 50px;"></div>
+<div class="solidTop"></div>
+<div class="gradientTop"></div>
 <div class="row">
   <div class="span12">
-    <div class="hero-unit" id="rootPages">
+    <ul class="nav nav-pills affix" style="position:fixed;top:10px;z-index:20;">
       <% @root_pages.each do |page| %>
-        <a href="<%= page.title %>"><%= page.title %></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <li><a href="<%= page.title %>"><%= page.title %></a></li>
       <% end %>
-    </div>
+    </ul>
   </div>
-  <div class="span4 pull-right">
+  <% if @child_pages.present? %>
+    <div class="span4 pull-right">
+      <div class="well affix" style="z-index:20;">
+        <ul class="nav nav-list">
+          <li class="nav-header">Subsections</li>
+          <% @child_pages.each do |page| %>
+            <li><a href="<%= page.title %>"><%= page.title %></a><br/></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+  <% if @child_pages.present? %>
+    <div class="span8">
+  <% else %>
+    <div class="span12">
+  <% end %>
     <div class="hero-unit">
-      <% @child_pages.each do |page| %>
-        <a href="<%= page.title %>"><%= page.title %></a><br/>
-      <% end %>
+      <h1>An Artist</h1>
     </div>
-  </div>
-  <div class="span8">
-    <div class="row">
-      <div class="span8">
-        <div class="hero-unit">
-          <h1>An Artist</h1>
-        </div>
-      </div>
-      <div class="span8">
-        <div class="hero-unit">
-          <% @home_page.each do |page| %>
-            <h2 id="pageTitle"><%= page.title %></h2>
-          <% end %>
-          <% @home_page.each do |page| %>
-            <p id="pageBody">
-              <%= page.body %>
-            </p>
-          <% end %>
-        </div>
-      </div>
+    <div class="hero-unit">
+      <% @home_page.each do |page| %>
+        <h2 id="pageTitle"><%= page.title %></h2>
+      <% end %>
+      <% @home_page.each do |page| %>
+        <p id="pageBody">
+          <%= page.body.html_safe %>
+        </p>
+      <% end %>
     </div>
   </div>
 </div>
+<div class="gradientBottom"></div>
+<div class="solidBottom"></div>

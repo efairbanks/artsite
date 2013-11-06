@@ -1,3 +1,47 @@
 // Place all the styles related to the Site controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.solidTop {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: 10;
+}
+
+div.solidBottom {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    height: 20px;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: 10;
+}
+
+div.gradientTop {
+    position: fixed;
+    top: 50px;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    background: url(http://ericfairbanks.org/whitetotransparenttop.png) repeat-x;
+    z-index: 10;
+}
+
+div.gradientBottom {
+    position: fixed;
+    bottom: 20px;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    background: url(http://ericfairbanks.org/whitetotransparentbottom.png) repeat-x;
+    z-index: 10;
+}
+
+div.topNavBar {
+    z-index: 10;
+}
