@@ -14,4 +14,17 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
+//= require tinymce
 //= require_tree .
+
+$(document).on('page:load', function(){
+  tinyMCE.init({
+    mode: 'textareas'
+  });
+});
+
+$(document).ready(function(){
+  tinyMCE.init({
+    mode: 'textareas'
+  });
+});
