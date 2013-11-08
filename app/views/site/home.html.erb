@@ -1,5 +1,12 @@
 <div class="solidTop"></div>
 <div class="gradientTop"></div>
+
+<div class="sideNav">
+  <% @root_pages.each do |page| %>
+    <div class="sideNavElement"><%= page.title %></div>
+  <% end %>
+</div>
+
 <div class="row">
   <div class="span12">
     <ul class="nav nav-pills affix" style="position:fixed;top:10px;z-index:20;">
